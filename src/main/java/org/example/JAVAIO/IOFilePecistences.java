@@ -53,7 +53,7 @@ public class IOFilePecistences implements FilePercistence {
        if (contentList.stream().noneMatch(c -> c.contains(oldContent))) return  "";
        clearFile();
        contentList.stream()
-               .map(c -> !c.contains(oldContent) ? newContent : c)
+               .map(c -> c.contains(oldContent) ? newContent : c)
                .forEach(this::write);
        return newContent;
     }
